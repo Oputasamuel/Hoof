@@ -1,0 +1,8 @@
+import{AvatarModifierArea,AvatarModifierType,InputAction,InputModifier,Transform,engine,pointerEventsSystem}from'@dcl/sdk/ecs';import{movePlayerTo}from'~system/RestrictedActions';import{EntityNames}from'../../assets/scene/entity-names';import{hideZone}from'../track';import{CameraRig,setCameraActive}from'./cameraRig';import{RaceState,gameState,setRaceState}from'./state';import{clearTouchInput}from'../ui/touchInput'
+import{audio}from'./audio'
+const lockAvatarMovement=()=>InputModifier.createOrReplace(engine.PlayerEntity,{mode:InputModifier.Mode.Standard({disableWalk:true,disableJog:true,disableRun:true,disableJump:true,disableDoubleJump:true,disableGliding:true,disableEmote:true})})
+export function createAvatarHideZone(){const e=engine.addEntity();const position={x:32,y:8,z:32};const size={x:64,y:16,z:64};Transform.create(e,{position,scale:size});AvatarModifierArea.create(e,{area:size,excludeIds:[],modifiers:[AvatarModifierType.AMT_HIDE_AVATARS]})}
+export function parkAndHidePlayer(){void movePlayerTo({newRelativePosition:hideZone.position});lockAvatarMovement()}
+export function enterRace(r:CameraRig){void movePlayerTo({newRelativePosition:hideZone.position});lockAvatarMovement();setCameraActive(r,true);setRaceState(RaceState.INTRO)}
+export function exitToLobby(r:CameraRig){audio.startMenu();clearTouchInput();setCameraActive(r,false);parkAndHidePlayer();gameState.menuPage='MAIN';setRaceState(RaceState.DIFFICULTY_SELECT)}
+export function registerSoloJoin(){const e=engine.getEntityOrNullByName(EntityNames.SoloJoin);if(!e){console.error('Missing SoloJoin');return}pointerEventsSystem.onPointerDown({entity:e,opts:{button:InputAction.IA_PRIMARY,hoverText:'Solo race',maxDistance:10}},()=>setRaceState(RaceState.DIFFICULTY_SELECT))}

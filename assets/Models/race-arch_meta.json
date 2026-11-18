@@ -1,0 +1,61 @@
+{
+  "resource": "text-to-3d",
+  "task": {
+    "id": "01a1ebca-ec71-77e2-84ac-13a3efccd961",
+    "type": "text-to-3d-refine",
+    "name": "",
+    "status": "SUCCEEDED",
+    "progress": 100,
+    "preceding_tasks": 0,
+    "created_at": 1794957309205,
+    "started_at": 1794957309216,
+    "finished_at": 1794957338755,
+    "expires_at": 0,
+    "task_error": null,
+    "model_urls": {
+      "glb": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-ec71-77e2-84ac-13a3efccd961/output/model.glb?Expires=4948473600&Signature=pkAu76HNOrkOCcWXqjdBL088gCKWli5GQgp4BBRvpD9Z1tyStqIKehcUE9kyHve7L6~E4jasA~pUy779P40cJhh0~6ixJTCXqzZQRKiXqYhgY5fnhynCZDaauSR1p~1bCOmjht0B3Utj0Uma~Tnwj~xvhwPQsqGWJl4Y-PFgsp4zSYw9QlrUkRHXR0D~7X7~ikZL68Wdi1OzB4Hy~uEtG~n2qBo2qn4nqCVSTFPrWNmTRCmqhyoTGe3It~MzM7J54H0ENtGKfEAmyFiWrl1rNgJhpClPidKlJhNqQ75lcpVXmwVef7570vg4p9D5~p4CToxfOrj8eMpvam3Ddvv-5g__&Key-Pair-Id=K1VGYTHIYLM9UM"
+    },
+    "texture_urls": [
+      {
+        "base_color": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-ec71-77e2-84ac-13a3efccd961/output/texture_0.png?Expires=4948473600&Signature=U7DsmQmiXA6DyJUO532HF5ouh86hS12mGJB1eg2KcurZRPPT6hFu9Q31CW2HfcipIFssIsCpaDFtNqqlI5wTOd8QatatkMhZR-NxIrOagWSCmnNPxAWkMQ0JTR85OVjwnxII4sT2Tn0ohL-6HAhlipODnYjcI3Q6Q0KYosV9R7GUQJmpWmGEVe84zgWst8tYxTFmQ1Ke2X09amiTzT4IT09~-im1VkpPnsH8yDUQqZJrcgjTK0zNCIhCzqORWvZKHF3tuxNhu8Do6dp0vXAI~o6mWU0Zulpzk4gr5nsp5GNmpGyRWnmTTu4E5kdz-xbROxk-PTKbuZzgJJnmitJTjw__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "metallic": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-ec71-77e2-84ac-13a3efccd961/output/texture_0_metallic.png?Expires=4948473600&Signature=ZQW8x6cP4SmTf9AoCOaiBvXE8xZFvuh4wpAddZ386ltES02lmsNzMYN8UMIxy0JBnTxV8vO9h82hvmUj019bzSr95O1oW01IedUUyLyYD-Yj1wceli75C1QkOLWGuhmWB5PYMI0-qJ9y-NNFueCu61CE3uL6itUMomsdo6uwr~e05JWXLqhLGmp2XufS64rEG6fGlGI17HOldXBZg3UswTfO5MP8yP6hRAdJOS~8CXuDTcbb8EHIToY2LoeTVRrmhlPw6Ibw6dp0syXPnsSuz3y57e4UAJMOjvvJj9aPJvw~oQesYiLkm5uLHlDC8-zfgw2oM9NyDSWf1XVDaGRiJQ__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "normal": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-ec71-77e2-84ac-13a3efccd961/output/texture_0_normal.png?Expires=4948473600&Signature=D5R0doT0iNaT0jjNS-~SksGjc6gX9Ga6t8ycuhnS3aXiox4msEWufF932F2cxtvaQ0UWuosy2vQSXLOG80m9gF9xT7hMqRm3612mCf~RZl9H2VISYV-Dv~uotQ39BvERfa97r3OpfOni46fO6SlDUL2Dsofu~Zne~z~lt5WDsitkxLc54cSDo905LVC3rVsPhGCdVZ3VP0B2WyVDGbMM-dv8vL3m3WyjJMwyHID-zsOFsfucGGbdsKUAdllhUOZ3e8XGdAwtlX2M~IDuzN4XRr6NjHsZi4gAa4vxq4XW8Pkh9o45DsEHxTwz8tlgjYlnplfaCL38~0BtQa9LzCA2jg__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "roughness": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-ec71-77e2-84ac-13a3efccd961/output/texture_0_roughness.png?Expires=4948473600&Signature=UWm4th27TngZUTk~t5p~4Jt57eRHQUEKzFKhG-I2rV5Uy0~dzMwZonJKiKstlTL2Sy5nOZB~68orlidsqYfuAXWE9gK~o0o0SZTNv1rDsI9~Rm~vxTb8H-XhMyFt2a5Gvu7zgfUKfw51UmzLCNeMjCOxiCNB1uPEZG1EaxMYkm7XUxo8SRwVQE9wcfjrvPLiyuDT7HttY26cgkvhYjq4f~i6w2140Qt9ApHn04-VmDm8WXJ4YlvvlK9z3Y2zquNhcVSQGAxk61SlIBHxZMefH8G8XwDUivXNlw1AiBYeAV0UVGWXEgouch8iPZtIKljKIg6J52yFHR89igmY-1DZEw__&Key-Pair-Id=K1VGYTHIYLM9UM"
+      }
+    ],
+    "thumbnail_url": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-ec71-77e2-84ac-13a3efccd961/output/preview.png?Expires=4948473600&Signature=Psja8J-Hdn3oiBMmC2ejgdKJInCc7ium7A5l3d9DjDWTWc6SwltpKo-6UEj0Q4tpbsfSXnQCkvdT7ENmndRwvz1sqyRHfVPt9He8H~yqwWC7HGRyE~mb1zq~BSv8GAtAl4OSWfPIaXelYfWGcHOnOjDAZZtqtCQn5BoqKEjcLLJb~9CNN2zfM7rfulhlLSxtaLQPoO2Ks8CUBHmiq6ou-xCq6H5iLKN2urapUaDOgi2OXDEAvBFeUdkpg~EXIER4iKtoTel6TluFAccqnE15PmRsCFHdfqSsWKb7CCTKwtm5dBgGJ5OAx5uNM91P-MfF3ixsTYL-wxrWAr2Z7aJ3YA__&Key-Pair-Id=K1VGYTHIYLM9UM",
+    "consumed_credits": 10,
+    "prompt": "Standalone ornate low-poly horse racing start and finish arch for a polished mobile game, matching a luxurious dusk racecourse. Two sturdy dark carved timber columns with warm hanging lanterns support a broad decorative wooden header. Symmetrical glowing amber horse-head emblems on the header, gold geometric diamond inlays, and a large central faceted shield plaque with a raised golden number 4. Wide open center for six racehorses, clean front-facing silhouette, complete isolated object, no ground, no fence, no people, no extra text.",
+    "texture_prompt": "Luxurious dark mahogany carved timber, deep purple inset panels, bright antique-gold geometric trim and horse ornaments. Central shield is purple-black with a large luminous warm-gold number 4. Lantern glass glows amber-orange; painted surfaces have polished stylized mobile-game PBR materials, dramatic but clean, no extra text.",
+    "texture_image_url": "",
+    "mode": "refine",
+    "model_type": "smart-topology",
+    "seed": 2312073947
+  },
+  "saved_files": [
+    "C:\\Users\\Hello\\AppData\\Roaming\\creator-hub\\Scenes\\New Scene\\assets\\Models\\race-arch.glb"
+  ],
+  "skipped": [
+    {
+      "key": "thumbnail.primary",
+      "reason": "not_selected"
+    },
+    {
+      "key": "texture.0.base_color",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.metallic",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.normal",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.roughness",
+      "reason": "embedded_textures"
+    }
+  ],
+  "downloaded_at": "2026-11-17T23:16:50.837Z"
+}

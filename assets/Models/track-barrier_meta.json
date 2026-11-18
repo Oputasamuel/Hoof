@@ -1,0 +1,61 @@
+{
+  "resource": "text-to-3d",
+  "task": {
+    "id": "01a1ebca-dcbe-7175-8e2c-6653174f89b4",
+    "type": "text-to-3d-refine",
+    "name": "",
+    "status": "SUCCEEDED",
+    "progress": 100,
+    "preceding_tasks": 0,
+    "created_at": 1794957305378,
+    "started_at": 1794957305400,
+    "finished_at": 1794957330358,
+    "expires_at": 0,
+    "task_error": null,
+    "model_urls": {
+      "glb": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-dcbe-7175-8e2c-6653174f89b4/output/model.glb?Expires=4948473600&Signature=Yr3V3G580nQfekZ18riP~ERCwIcezlfYphYZkvaJ1EhC9eXdbCS2vFWNu1NeW8cNUPfKwACvydLe8BOsxd4H~hziF9TVwql15oF6-b46-vT9NpC8Z~LvLmx-z~mupKgKOY7v7mXudV7px9eFt-qt6~L4aY9vZZOixPRX44gJNAkQDq59H43xxS2PmI23fPBaHsRkRbDHcOYTPZCwyPU3BJgp2Lb16otNi1NXAgCdDEK5kAJS7~b-grIssVdwr9ImHFu8lgj7pFVra7VWUkNwDNYNgizOzXGsONg6r~A6M4ltgvyf5a3wCgr9I3mBTHIo9RcqY-OviIftCQ2K89aHEg__&Key-Pair-Id=K1VGYTHIYLM9UM"
+    },
+    "texture_urls": [
+      {
+        "base_color": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-dcbe-7175-8e2c-6653174f89b4/output/texture_0.png?Expires=4948473600&Signature=CSv4H0Ht3-DfHkQaiPUDewrz4VqEYlbn6u9kMJOlWcyNmMwr6o8JnTJ~tuF9ezNpEg3yT~-dB~mAUiQdLgmIISyibqqRLEY~xVF2m5cI1SFzKANsfib1nhXMCIM0BX4SScwWTqXOo5htS2~I5LRbopsKisHgkDbrJK4apgyg1g-sjmol~fblYpti2hDOPxCVW3HOHqSdNUAoZMj6-o2WS4ZSj21MoZXTDwhdYCv9z15eh29SL588fDOyF49OLlSN-n-jTLvgLrvoFl8RkXE9BZUa1WrI4C0x4b1z4CZxXNDr745MjU7JkgO44ltpJTKBl1XOIYPicpRkTYG0ai2PEA__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "metallic": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-dcbe-7175-8e2c-6653174f89b4/output/texture_0_metallic.png?Expires=4948473600&Signature=Rb3JN05eQmi40ZuIr8Kln5RG6y-He72pbyk-ixDGZcmmH~5ywSDw4Nv7KukipDR9EML7b7bXjESwXleIpZrOQJMRvMbOQfYlwAxsninukCMupSXg3OyD-8wUAoW-q1x4eNPi13OQm82pt4gGpjhjLHyE110w9JHnF3rMU5jkdTZcZbuH0clBAcnKIAoBqOo7IwmqIuqj0MrZtcg56BhdJ8K~GiR9YkJYoadQopIq3ZwlQESJzjAtIQIpgaYyoV8qly-qrXO2uxCOSrMSxKCWh-xjpZMT4Zd8JbvdCYFB4JPOP68U6LjC4aFKUNP7rVnIZ0LtJNirZfL3Kre5r-rjKw__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "normal": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-dcbe-7175-8e2c-6653174f89b4/output/texture_0_normal.png?Expires=4948473600&Signature=lh0fsSddoPDEenHURdLqwlie22gE8T8G3VvBCVEZfa3Fi8oQeB7A7a3Z04FdyRMv1se2C96bhGPJchpkBzZkVhNoe7RA-WY06musBSyCh9dkeIBw4O8VUtVR3eR2zMNt8nnnu9yLzFalASLKUucjwlskgao11Zk54l3d9JTplJPqkU5Uy5HKMJ0vwTYGesP7owLLIJK8mTflhKKX1YVl4fSELQa7ERrBknwwIJ4ogCc-CdN9uQ23XT~wbrAZHWu3yRXbA-p4hNqzIIJBhCel1WbBcRAUDdcH3-NW~FHi-VtUrfeCnyhvhGtz4zhAUbiIctkYVTZFXM4zn~4nZfwFKQ__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "roughness": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-dcbe-7175-8e2c-6653174f89b4/output/texture_0_roughness.png?Expires=4948473600&Signature=A2e3GNqQBSm-K4yYMoA90J10pdNuZrhC0CGkRBhaG6P2u9W5oYdwfijkzA0TOOs6HSXw5-bWuDieNwMQLhW3bJWVcOZjemGPXfMdDX7tEcRhJMOmPxLFzB3hoAbUgfNaxRz00jS2IoqzsAOHSz7KKFMJVIxXFo51xiAI6zYEFWHS-tH60PcKR4vnITsvmTjLwSZqscxethfG3~MpJUl3Zx0DiGpNwGNSSukZxi0LVdUXmg-oL8FDfwzlESOCcoTSFor8VwI77Xfun3zDaIbgD6opwlZaiVWeJh~4dsz1qbncHttGvACgzlkhkuqs3T5mXuMV1vCabbcTAhjWeQ9nbA__&Key-Pair-Id=K1VGYTHIYLM9UM"
+      }
+    ],
+    "thumbnail_url": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ebca-dcbe-7175-8e2c-6653174f89b4/output/preview.png?Expires=4948473600&Signature=RxR~FVXo8Mh6cQ76B255MO9o6~E0QObbt8w~wRCBppx~Wo77Fa9EsAagpqv6XrwebFLAesEdzMB64OBAhh-UIWV2x8FuoHiW3o8DOdtdAo0I5s9oRs8GN3~Tu6osQALWOGH2E0jehqstEQ4yNIQ7glFY18g1mQSbTV01Z20S01iPJGyz~x5MnT7MMzHqo45eyrDKJMsaRLhfS6PCvoCAoF-YR6j~r0pzm5NWSXPGj~xQK53I1nsDEyY76YYgcjpJIRyiHLcyV~LzukmkQbpZY87P9UZs1pUM6uSsz15IDnlnbPz3~a~3dgpDZiG2~Wg2iBLC1MahPVCw-02TdWTr6Q__&Key-Pair-Id=K1VGYTHIYLM9UM",
+    "consumed_credits": 10,
+    "prompt": "Single modular low-poly wooden horse racetrack barrier segment for a stylized mobile game. Exactly two short sturdy dark timber posts joined by two horizontal wooden rails, with one small purple fabric banner panel carrying simple gold diamond patterns. Straight seamless repeatable fence module, approximately 3 metres long and 1.2 metres tall, warm carved wood, subtle gold fittings, clean silhouette, isolated complete object, no ground, no vegetation, no text, no horses, no arch.",
+    "texture_prompt": "Dark warm walnut timber with visible stylized grain, slightly worn rail edges, antique gold metal bolts and finials. Central fabric banner is rich royal purple with a simple bright gold geometric diamond motif. Polished colorful mobile-game look, readable at distance, no dirt, no text.",
+    "texture_image_url": "",
+    "mode": "refine",
+    "model_type": "smart-topology",
+    "seed": 1619261904
+  },
+  "saved_files": [
+    "C:\\Users\\Hello\\AppData\\Roaming\\creator-hub\\Scenes\\New Scene\\assets\\Models\\track-barrier.glb"
+  ],
+  "skipped": [
+    {
+      "key": "thumbnail.primary",
+      "reason": "not_selected"
+    },
+    {
+      "key": "texture.0.base_color",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.metallic",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.normal",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.roughness",
+      "reason": "embedded_textures"
+    }
+  ],
+  "downloaded_at": "2026-11-17T23:16:48.826Z"
+}

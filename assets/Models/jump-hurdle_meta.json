@@ -1,0 +1,61 @@
+{
+  "resource": "text-to-3d",
+  "task": {
+    "id": "01a1ec03-5234-74f4-9345-2be53de1ef7e",
+    "type": "text-to-3d-refine",
+    "name": "",
+    "status": "SUCCEEDED",
+    "progress": 100,
+    "preceding_tasks": 0,
+    "created_at": 1794961007243,
+    "started_at": 1794961007254,
+    "finished_at": 1794961032705,
+    "expires_at": 0,
+    "task_error": null,
+    "model_urls": {
+      "glb": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec03-5234-74f4-9345-2be53de1ef7e/output/model.glb?Expires=4948560000&Signature=OcMjHE7ktr6AI6sgbysiFJmNJeHrM6XSUxXlF48SteNIGyYaZjGcLge6XqtSQLZl8SZClOfpiklOnQHMxDyj6JrxbF8TyTYFTXBcyW7J1LXWvKssFc5gPQE7olt15oLwrBeEHk3ObnlUsCCQoNFSFDS9GRN81hBkkv6-wqlbfavOA6xSozByyPn6q9OsXdVkfcyjeNvaQm4kYxFFGlnrYIHFy3K2JmIol9Kyut0PuI5fdVbK6t8AkbMeSIa6tFUELtOxFtGMU1U2WTFPqVkDKLjIt1loc4-FSMC6yl~N9A6xbgbdvuIt1lex7afuQmOEUe2He~ZzLeLkOnm8ZsRjvg__&Key-Pair-Id=K1VGYTHIYLM9UM"
+    },
+    "texture_urls": [
+      {
+        "base_color": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec03-5234-74f4-9345-2be53de1ef7e/output/texture_0.png?Expires=4948560000&Signature=jHvBe~DwOEcoacrxj56Lj2ybhafc-mxm7xZiVfI4w8S3AFhIVNT9RN77U9XDVrm81O91DCI~Eb1l23ywwTBY3crb9lxKAjaCXklu117iArbflgRtj2fDfL7fcicvg5UjhxtAvi9Kl273ZwbBiqGhUD3bOeL95DnsfkldjEyFlhMd0iTXofjND~LG6KDub6BFmNzGy17m5c45VcqR3Nq17yiScPmoYrkeCUZzc2Tlzv8mXL7FBABzhwSoF2OegG~HhEHg9bcFmPxoJ~BW25ykXlP0zPyM6GnG5f9SJqKHDPK3CsuPFr0SQijxy98fbbq~c7cL8m~iwJIPqvAkYy2O~g__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "metallic": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec03-5234-74f4-9345-2be53de1ef7e/output/texture_0_metallic.png?Expires=4948560000&Signature=eXALMvDlGZ9MsTu3~9oj0pM3b-zW9DfVBYsZF3wTYuVe7U0NpjeMdPpG3L7fHiokpKQK3jslY8ad5dzyJB4xF0kz-1Hi~ffOctPV0IRXvAI~uiS22G~1CYIr5phxqONlg6QveijdOZtjv9qDk3BYyI5AXeJsO0nwzfR5EbyyQW~rPPf6IADVTU6j7Q-cyf2a6Fu5haQpg4UpQ6KwqWvp9NwlIlvR~NqqP2NF7kiXnLDf318CpEWBick4fCx6Y4bOVkA1AnrBtXU-Up5kjo6yO~CtTe3fCSWG1QzjBIg4zbmYkzpatcjekiIGK7riE6qCws0zAOPN2O7zDYvhVbzang__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "normal": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec03-5234-74f4-9345-2be53de1ef7e/output/texture_0_normal.png?Expires=4948560000&Signature=V1wFEuTEsZD5dQpGX7zH~sVHoX-GEILeBiWc8xH6a-gUaJlBG7s4ztMYq2YDn-Bu3LDzvbgiqzE6VByzIU3DmQB2EJOBlGGa~vhkH83ghrmuGJASjpLnJ3m9ngfM2-5i2b5-E9brJMC0aQlPo34PI4s1LHpsqzVz-tzMxd5fUJzvRUaIeFp-GEJ91R-2fMTnT-xfi2l5xtXyIoExpMDxXsClqp6N0fRbh5om291rtGuVJLkly3M93FSRFbjT7JRSsjGJOJ~LCxTgOsxLhSHDJ4DWxev-R-Hwjb-FoK9w0uyCTA-mHa68CliKXrRHLiafXdi4YZUzTH4SeVPDlmPFGg__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "roughness": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec03-5234-74f4-9345-2be53de1ef7e/output/texture_0_roughness.png?Expires=4948560000&Signature=Y5SGmNg7qIM23E6njTFfigPDiImSTT0Nt5FY3S9cvI00P-5oaAy3slgEMNXMkXuH1j8GVQ3tZD-LooOecEda~7h3w1L28cBG2Lb9w5Y~NZXzzeu9HV6XvO72alQzDtcND1LD~pIuSP3Jc36Yt7uqTssJBMjVZdfhKnvYWlqg-5~-9-4ABItIJVcJ3ENMS0AjHSO3b2xV44igzLH60AjOc3IZ3PmnrJHCsoN3w02TjjVFjQrNpfVOevaoOiYtWQBlBV8HJTg9nSKQgKrSFVC4HXjeVEfvV14cmoSba7fN2-QvUvdDz2kzBfLMeh7oPK3ldvbbor0nO49cvaYnjZHwBA__&Key-Pair-Id=K1VGYTHIYLM9UM"
+      }
+    ],
+    "thumbnail_url": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec03-5234-74f4-9345-2be53de1ef7e/output/preview.png?Expires=4948560000&Signature=FntRrO7i394aDMVyCp9-3NPp35DRCOdD9VIaQ3mIEJVe9~CV9P6PMmUAlPxVDbam~XRxCyKolUqfDSVKjggzJWWM5Bb8cQvMyv2dJrdJqHJ-mKz38Zb1E4WWW7CmGi7QB2jrQlVWbx9Zqt3v3I1o2z5n5ghWKBQtqNOpLW4abxlAS8FhiAwFjMJbkbMG9kipTxy1Q62ZtLfwG0bEu7Mhh0u1DlUYjYMDUDV9iB2wdzoUn9P5WwFtyP8ZnrZliq~5b95y5vYgihqcCx8dOIDny1MvQmnLGXmJDKz3mShqSl4r8QlSLesAh-DdU~vZMda5vywEvsBRXMBul5vaQY4wTA__&Key-Pair-Id=K1VGYTHIYLM9UM",
+    "consumed_credits": 10,
+    "prompt": "Single standalone low-poly horse racing jump hurdle for a polished mobile game. Two sturdy dark walnut side standards with wide stable feet support one horizontal breakaway rail at horse-jumping height. Antique-gold metal caps, purple leather banner panel, small gold diamond and horseshoe ornaments matching a royal racecourse. Wide enough for one horse lane, clean symmetrical front view, physically plausible, isolated complete object, no ground, no horse, no rider, no text.",
+    "texture_prompt": "Dark polished walnut wood standards and rails with visible stylized grain, antique-gold finials, bolts and trim. Rich royal-purple leather banner with simple gold diamond and horseshoe motifs. Warm premium mobile-game PBR finish matching an ornate royal racecourse, clean and readable, no text.",
+    "texture_image_url": "",
+    "mode": "refine",
+    "model_type": "smart-topology",
+    "seed": 1467758625
+  },
+  "saved_files": [
+    "C:\\Users\\Hello\\AppData\\Roaming\\creator-hub\\Scenes\\New Scene\\assets\\Models\\jump-hurdle.glb"
+  ],
+  "skipped": [
+    {
+      "key": "thumbnail.primary",
+      "reason": "not_selected"
+    },
+    {
+      "key": "texture.0.base_color",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.metallic",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.normal",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.roughness",
+      "reason": "embedded_textures"
+    }
+  ],
+  "downloaded_at": "2026-11-18T00:18:02.796Z"
+}

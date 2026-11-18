@@ -1,0 +1,61 @@
+{
+  "resource": "text-to-3d",
+  "task": {
+    "id": "01a1ec23-248d-7360-9b3a-7ec27dca72e5",
+    "type": "text-to-3d-refine",
+    "name": "",
+    "status": "SUCCEEDED",
+    "progress": 100,
+    "preceding_tasks": 0,
+    "created_at": 1794963090644,
+    "started_at": 1794963090657,
+    "finished_at": 1794963136923,
+    "expires_at": 0,
+    "task_error": null,
+    "model_urls": {
+      "glb": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec23-248d-7360-9b3a-7ec27dca72e5/output/model.glb?Expires=4948560000&Signature=icr~x-Kzi1ZBwYRXdvsYSOUhVjjAuQDkw~13eIBJNtQvWC4JqeSPhL9zRIsxMudMpVJJnd2o732Kn3ftsboNg1sjN4U4wcwH4e6geaeVqSolmutsmgg4c3P~joUk~~ThXE4EQ8XocvzoREzIbXEynPX4E2hPRaMmu4n14rSieU0Jjj2zeIQoOf9LTkaxidmb5khJRVZDtxUGqTkK8goiCO~EJT87vyh8ZTYxfi1vsM9pnprunr6GE6~t3kChgti0d-Wz07sglSzxkYpsD0u3nVfVFXzTFFrnXz5QKaPb7V0CIt6RAK742izqzaRtSpy3aQLblD-QOC-j0x6lknIyXA__&Key-Pair-Id=K1VGYTHIYLM9UM"
+    },
+    "texture_urls": [
+      {
+        "base_color": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec23-248d-7360-9b3a-7ec27dca72e5/output/texture_0.png?Expires=4948560000&Signature=fQTuMK-KjiCBdWyEZsyhPR1B4xxxvciHreKc2ojxhGbRrQ2s66eQZ1GU5zyfEysR0mIssQ6MhmAbXpCnOarTN9XuhFAzeH3Bl8Wxe8GHfgf82HQ4NjRxs-q4o11CJnvdAvcy6RbLK0-YE4MCIdABI2~BCEhWcyIBgSfD1q5z3OQpjy2qu8AgoG3xN3TChMpxyzi3Sd9qajp60py4kItUCEkeApj8~gzT4-5HM7F0YyjemWsflR9BZWUjKYBA0FXdvzHWKTmDCYvW6GLIGP8-ltCTUnlvOlYK0lF9HeZ0hEu1LCQ8qYbzlhaySyqb8mzIwdOmSxed6cYkomKPyxAVlw__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "metallic": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec23-248d-7360-9b3a-7ec27dca72e5/output/texture_0_metallic.png?Expires=4948560000&Signature=izFE4GL-GApgdJEh1BNkKPOp4-QuE5e3XEUyZ328n--vBgXxI0eIKEkMEEIlLMwc56HAn1iGXSIQImdhJP3X5VSoOsEjwNUNhU6ENCIQ8pI5CLGll-TvRrqfME7OWo7DaI4xtmVREPVqH-jUo6Xg~khHPO1E3ai5OHnpfvYFeiEXBeFLBnkk-licEIBQU6J92MbvRE2KnOOfqltBam06bDUt2RqwzuNDYFcSxfj3zcHdEClHoS-DixKXqa17gZ6TweOikWlkd6yuAOWddxNDDkHOhpo-V816j2dpi9xMNL0eCGKEbxv59KjqEKGaU-IG5szs4qYXOm2l2I63m~qp1Q__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "normal": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec23-248d-7360-9b3a-7ec27dca72e5/output/texture_0_normal.png?Expires=4948560000&Signature=RAQdwNka8ICDkjLcYdtleKDak3CHTT4W9hpjihx1AUQ9IvXAcDRr8VkPcDV3YRn1kuLgFAeUdc-1BOnSUYlRUes84~zjs~CzPOjMmK~yyRBWnjBaQw80~MkXKUVu70uYOgOulZPy69H74RbMbvYbAJqce0WM8n~XJbnGanrkp51jTXiWpIoZX~WVDMND8P1HUFuzlnnJ9yrEzhk4fdIsnN5yymWsKyYgY2eEoSJatkLLAKFW8Cm2CDGToVgvoBmysV6Mz8CrzKrzRUjEXzLPfUFka-Dd9y7qyAqt-TvgAALMDOJmiHoDqKoZVuK6sMHTIN4WB2AwtLc~SE-jIORcTg__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "roughness": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec23-248d-7360-9b3a-7ec27dca72e5/output/texture_0_roughness.png?Expires=4948560000&Signature=Yy2m9OTp1BrfnKNjQXwmC4cfvnym46O2fG4Yih1dvQgoN53qH0ZoylDwl-BkZ9Wq05JkQDz3h~fd9KveE9pK-mEiVr-WjO3LA7uud1VHETrpdgzrfDjGSS7VlcD-0m~HnZiYMpMfiI5euPKWHAR1a-axBp-wPbpjoM~8OqQ3NhhMo0Z-JvOO6i2JQL5vAKrf1i-VzqILx6YQfPuaYo1I4oKVAZm9qgCyxNri2-4wg6btdwbKW7-RB8mB6hjZHYOmLfJBDjF-r7XRmqaJJyAAY0WCam1eoakSA0JMP5FXarwCP-6A-xjaizcNC9py46RMzBiXsJ570XqXyMEx5biqDQ__&Key-Pair-Id=K1VGYTHIYLM9UM"
+      }
+    ],
+    "thumbnail_url": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec23-248d-7360-9b3a-7ec27dca72e5/output/preview.png?Expires=4948560000&Signature=AGXWbHsocAv85vpLJqwi5A16e6nrX3fP9jaudq2Hki8sl6Qxne8PUFjsjA9-WcjIbHdETlkw1Hh0OrCanrZ-EHpN94xd2cay3m1RhkwtXt0YckwdpAoI4eeBxMM4uv9Xtq1eNCBnevvEfJepTBOE1br49gRa1e9c6hZkljJrFYcbCDvQ23b-SKsFkpANXgzqpRbFvkbsETyXf5s5YsZO77EY6yEZK4PQSVVicj1x4Wy8mabWRZlo32N8vwhGLUpalAbd69qLTgG6CL2sbVfBd8iaKNv87FUm1CKjygUK1ThOThZ7Wktu5ScUlS~tURuxNzVtMfGgOcx7SNAHFlKKuw__&Key-Pair-Id=K1VGYTHIYLM9UM",
+    "consumed_credits": 10,
+    "prompt": "Game-ready modular royal horse-racing stadium grandstand segment, wide symmetrical architectural facade, three covered spectator tiers, open seating terraces facing forward, dark polished walnut structural beams, carved stone foundations, deep royal purple canopy roofs, antique gold trim and finials, arched concourse openings along the bottom, two slender corner turrets with warm lanterns, elegant fantasy royal racecourse aesthetic, standalone complete building module, straight rectangular footprint, clean silhouette, no people, no horses, no text, no letters, no signs, no surrounding ground, optimized low-poly mobile game asset",
+    "texture_prompt": "Royal horse-racing stadium architecture: dark polished walnut beams and railings, warm cream carved stone foundation and columns, deep royal purple roof tiles and canopy fabric, antique gold trim, finials and balcony ornaments, warm amber lantern windows, luxurious but readable low-poly game materials, clean separation between seating terraces and structure, no text or logos",
+    "texture_image_url": "",
+    "mode": "refine",
+    "model_type": "smart-topology",
+    "seed": 486750547
+  },
+  "saved_files": [
+    "C:\\Users\\Hello\\AppData\\Roaming\\creator-hub\\Scenes\\New Scene\\assets\\Models\\royal-grandstand.glb"
+  ],
+  "skipped": [
+    {
+      "key": "thumbnail.primary",
+      "reason": "not_selected"
+    },
+    {
+      "key": "texture.0.base_color",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.metallic",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.normal",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.roughness",
+      "reason": "embedded_textures"
+    }
+  ],
+  "downloaded_at": "2026-11-18T00:52:53.349Z"
+}

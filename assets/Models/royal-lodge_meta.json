@@ -1,0 +1,61 @@
+{
+  "resource": "text-to-3d",
+  "task": {
+    "id": "01a1ec22-c59e-75ef-b8b7-e2abc24a2a55",
+    "type": "text-to-3d-refine",
+    "name": "",
+    "status": "SUCCEEDED",
+    "progress": 100,
+    "preceding_tasks": 0,
+    "created_at": 1794963066432,
+    "started_at": 1794963066445,
+    "finished_at": 1794963109493,
+    "expires_at": 0,
+    "task_error": null,
+    "model_urls": {
+      "glb": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec22-c59e-75ef-b8b7-e2abc24a2a55/output/model.glb?Expires=4948560000&Signature=LmTRbznLMK~ahDt2vJu4JOnIPpqXw-MHFGJfc8l65eR3qDMJByZApWG-qkQmv7Ld5dWfw9bzDOWr9XAGeLJGE8pj~kqtb7qt0KQ~oEY1hU8VZI2ZZM03Zw6JdmoCXvTFQJru3o3eUBPKxi-bwjKlvU7oukNuAZwrpIL3H~VI8FF3vCJT-1Av0ocYiwbV10xcJ4SAb6aEwq-eZTlgZu74Ikyl5IFMMwK5RUHlxlnPSCHdJ3Ue7NXMxy19qFhFvkjA9qf8Y6NAu~SNBOdUBE-3dg5IxxgDK1BggVKzYz2~0KN-a3NRmPm6dMWiB7K69byYq1KyCziFjzed5qxlcdrkjA__&Key-Pair-Id=K1VGYTHIYLM9UM"
+    },
+    "texture_urls": [
+      {
+        "base_color": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec22-c59e-75ef-b8b7-e2abc24a2a55/output/texture_0.png?Expires=4948560000&Signature=Riqh3xeKl6H9p6p62hNoTyJcrZm4u-jCp8a3sNyFBTofL3OvFSdy-6rqb9ID8idSOIVU48tqk2Ub7FNylGSLWsGlHdV7mjH1yaz0ferwz9XYeh74~oLMWFhCzi4QeaEpJiwyuOjXPlJY6gLyKRosbGaoSz4ysuRJiKzR6cpYqciUzvjW8KWwVN1laPx4NGaP9Ax52-223xk87zlqqaPl52lT9virGroO2nzqYj50bEE~s1ou5uwyfVqp4bFzbCwK5XbWJi6KTMunV6zVc7nD9j9iSbWuOSx~GJai94zzr41OdWFF0sU8eeiz27zHiTxpzcdYNMl8p1hTeBfYeWIpjQ__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "metallic": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec22-c59e-75ef-b8b7-e2abc24a2a55/output/texture_0_metallic.png?Expires=4948560000&Signature=CgZM~v3iXVCJhUvDu5zruCFxptlw8lZ1nI38y8ZVvklzUi6TjZRTw3HEV3-jr9VNWyKyYC4E0D0Idx2kSBcqtbEcHI7WzkZfacC7iMwWBSe04FlD81DDIfeEZW7GEJ7CeQ43eoj-jaujyZd0cSChM0j2Oxwpl98-T5YR3Jzax-yXq1ePULwhvfnmfOmDYycEXy2Y9EZwZEcqTaW8y~LnMm43bYUlsY~d-U0qWsE808Kc7hIAlWCxrNnAvJK7yr0hN-sRbc4kzM1~KeJgenF~0Zt0yPNLkeair4utBYuGjgibTr6kTSmev6mZqGbL00MYBduvGMK2OkwBO-nsZaGpVQ__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "normal": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec22-c59e-75ef-b8b7-e2abc24a2a55/output/texture_0_normal.png?Expires=4948560000&Signature=kwcoIlyBSOxQ8BPAN9qK-kQbSX3weZDQT~5pn-UIGyq7VloZpJbGFUvMLHfnK6~9QKe~i7w0C~QnlY8c0qSHG2jyn7xYOtYCk30fuGxLhOFUuyX2WJjd-WRF8Gk3M~78oQhRSQKX-seFtMasdT091XJX~-exQmOt7WZz11bS0tUAXVYt7gEnxj7-8maLKreLtRYbLl8-1iiWsHT0inDVTkYC7xuLT-Z09hjXjj~6Xf7XKYW9syUC18onZALma6mle87WRJXPFs6qFdt7Faz2pP~vsDmLDgYNBL7RSiSDc5NagWEKgHHZAex27~eGOzTkaewUi3C878mWUNfTl4hBig__&Key-Pair-Id=K1VGYTHIYLM9UM",
+        "roughness": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec22-c59e-75ef-b8b7-e2abc24a2a55/output/texture_0_roughness.png?Expires=4948560000&Signature=L98-cGLeHTrDzaUtodwOY1mLJhhPRBHxvmMy4~V9mqZ~zZnv~EWNzbDLTRa4oeg2uvAnaVC6N2zSS5b-HjmHDe4GGByB6DCACOjkJZ4pz~dyvHHtkHT8MJAkfaCT5chAHMLHPin7f58J0SyfEHf8O6yr9ye~SF~BPIne-Sc5mUD7w3M2dkMcie-ykOh1Q0NuKiaqbfMl2r51DmuvDM2~zO-AalcZyIMy8ZeUvrSMhl13UanhG0z0Z-NSWa0NomgRNxwfbYWNTGZi7TROTU6Sf9TKyTGEbFFDacPhIZFFDiL52OqFCbyqYTR6ZN5Y4xSnDpft-qYh~tPaiWrlQzmKvQ__&Key-Pair-Id=K1VGYTHIYLM9UM"
+      }
+    ],
+    "thumbnail_url": "https://assets.meshy.ai/21798653-87b5-4243-9aa7-067418659533/tasks/01a1ec22-c59e-75ef-b8b7-e2abc24a2a55/output/preview.png?Expires=4948560000&Signature=eSrLR-E2RZif9iIzjV~UTZOAbdbe98g34Z68gGfJBeecGzPd9LpyUIGDNO4RSkmRO-7WiDYmWSMWJYc0YL7ZprY4m4JA2zshgDfW06zEH0zazpequMPSLE7TZ7PgBUv-DXiOGAh1ogNOzAeHA-NwlOGiJeCMKZ1jMUUh1GSnX-mdD15uJOiM1seAI-RS7uA7WMmTp5GxM79asS5arJkfhmojlOgj9hqpAi2dW4Jg-CW5i1qSi0zRnVNyehQtC7X9fgcbMnje0va1w7Bilj4R6iK98osT1Gxr7ZZmSWaXURcZfItQjZwVPPT7n5w0LnANZIYOR~l79iOeq8yLTjBXbA__&Key-Pair-Id=K1VGYTHIYLM9UM",
+    "consumed_credits": 10,
+    "prompt": "Game-ready compact royal racecourse lodge house, symmetrical two-story fantasy manor pavilion, dark walnut timber and warm cream stone walls, tall arched windows, deep royal purple steep roof, antique gold roof edging and finials, small front balcony for royal guests, covered entrance porch, warm lanterns, elegant horse-racing estate architecture, standalone complete building with clean rectangular footprint, no people, no horses, no text, no letters, no sign, no surrounding ground, optimized low-poly mobile game asset",
+    "texture_prompt": "Royal racecourse lodge: warm cream stone walls, dark polished walnut timber details and balcony rails, deep royal purple roof tiles, antique gold roof edging, finials and window frames, warm amber glowing windows and lanterns, refined fantasy estate materials, elegant low-poly game style, no text or logos",
+    "texture_image_url": "",
+    "mode": "refine",
+    "model_type": "smart-topology",
+    "seed": 1511445885
+  },
+  "saved_files": [
+    "C:\\Users\\Hello\\AppData\\Roaming\\creator-hub\\Scenes\\New Scene\\assets\\Models\\royal-lodge.glb"
+  ],
+  "skipped": [
+    {
+      "key": "thumbnail.primary",
+      "reason": "not_selected"
+    },
+    {
+      "key": "texture.0.base_color",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.metallic",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.normal",
+      "reason": "embedded_textures"
+    },
+    {
+      "key": "texture.0.roughness",
+      "reason": "embedded_textures"
+    }
+  ],
+  "downloaded_at": "2026-11-18T00:52:54.067Z"
+}
