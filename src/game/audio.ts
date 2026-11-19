@@ -21,14 +21,7 @@ let countdownEntity: Entity | undefined
 let goEntity: Entity | undefined
 let hoofEntity: Entity | undefined
 let hoovesPlaying = false
-let raceAudioActive = false
 const jumpEntities = new Map<number, Entity>()
-
-function ensureModePlaying() {
-  if (raceAudioActive) {
-    if (crowdEntity !== undefined) AudioSource.playSound(crowdEntity, CROWD_AMBIENCE, false)
-  } else if (themeEntity !== undefined) AudioSource.playSound(themeEntity, THEME_SONG, false)
-}
 
 export const audio = {
   initialize() {
@@ -97,12 +90,10 @@ export const audio = {
     })
   },
   startRace() {
-    raceAudioActive = true
     if (themeEntity !== undefined) AudioSource.stopSound(themeEntity, true)
     if (crowdEntity !== undefined) AudioSource.playSound(crowdEntity, CROWD_AMBIENCE, true)
   },
   startMenu() {
-    raceAudioActive = false
     if (crowdEntity !== undefined) AudioSource.stopSound(crowdEntity, true)
     if (themeEntity !== undefined) AudioSource.playSound(themeEntity, THEME_SONG, true)
   },
@@ -136,7 +127,6 @@ export const audio = {
     if (uiHoverEntity !== undefined) AudioSource.playSound(uiHoverEntity, UI_HOVER, true)
   },
   onPress() {
-    ensureModePlaying()
     if (uiClickEntity !== undefined) AudioSource.playSound(uiClickEntity, UI_CLICK, true)
   },
   countdown() {
