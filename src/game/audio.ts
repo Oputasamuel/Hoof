@@ -39,7 +39,7 @@ export const audio = {
       audioClipUrl: CROWD_AMBIENCE,
       playing: false,
       loop: true,
-      volume: .55,
+      volume: 1,
       pitch: 1,
       global: true
     })
