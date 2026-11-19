@@ -7,7 +7,7 @@ This repository is the working game project for the Decentraland Creator Success
 ## Play the test scene
 
 - **World:** `hoof.dcl.eth`
-- **Open in Decentraland:** [Enter the HOOF World](https://play.decentraland.org/?realm=hoof.dcl.eth)
+- **Open in Decentraland:** [Enter the HOOF World](https://decentraland.org/jump?realm=hoof.dcl.eth)
 - **Game Design Document:** [design/gdd.md](design/gdd.md)
 
 The deployed scene is a test build. Multiplayer, mobile performance, persistence and balancing remain active validation work, as documented in the GDD.
