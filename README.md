@@ -10,7 +10,7 @@ This repository is the working game project for the Decentraland Creator Success
 - **Open in Decentraland:** [Enter the HOOF World](https://decentraland.org/jump?realm=hoof.dcl.eth)
 - **Game Design Document:** [design/gdd.md](design/gdd.md)
 
-The deployed scene is a test build. Multiplayer, mobile performance, persistence and balancing remain active validation work, as documented in the GDD.
+The deployed scene is a test build. Multiplayer, mobile performance, cross-device persistence and balancing remain active validation work, as documented in the GDD. The repository scene is connected to the production backend; the World must be republished whenever the bundled scene code or backend URL changes.
 
 ## Player promise
 
@@ -25,7 +25,7 @@ The deployed scene is a test build. Multiplayer, mobile performance, persistence
 - Gradual sprint acceleration, stamina drain and recovery
 - Jumpable hurdles, collision penalties and imperfect AI rivals
 - Touch and desktop controls with a third-person camera
-- Persistent local horseshoes, stable XP and horse collection
+- Server-persisted horseshoes, stable XP and horse collection, with a local preview fallback
 - A 28-day check-in calendar with horse milestones
 - Twenty daily objectives selected from a bank of 100
 - Permanent cumulative leaderboard points
@@ -80,9 +80,20 @@ npx tsc --noEmit
 
 ## Authoritative persistence backend
 
-The scene includes a PostgreSQL-ready service in [`backend/`](backend/) using Decentraland Signed Fetch identity. It owns daily claims, horse purchases, race rewards, task points, cross-device progression and the permanent global leaderboard. Local storage remains an offline preview fallback, but it cannot overwrite an existing server record.
+The scene uses the deployed PostgreSQL service at [`https://hoof-dcl-api.onrender.com`](https://hoof-dcl-api.onrender.com). Decentraland Signed Fetch binds each request to the player's Decentraland identity. The service owns daily claims, horse purchases, race rewards, task points, cross-device progression and the permanent global leaderboard. Local storage remains an offline preview fallback, but it cannot overwrite an existing server record.
 
-See [backend/README.md](backend/README.md) for testing and deployment. A published build requires an HTTPS deployment, PostgreSQL and an update to `HOOF_BACKEND_URL` in `src/game/backend.ts`.
+The repository and Creator Hub scene are configured to use this production URL. After changing `HOOF_BACKEND_URL` or any scene code, rebuild and republish **hoof.dcl.eth** so visitors receive the new bundle. See [backend/README.md](backend/README.md) for API, testing and deployment details.
+
+| Production component | Current configuration |
+|---|---|
+| API | `https://hoof-dcl-api.onrender.com` |
+| Identity | Decentraland Signed Fetch |
+| Storage | PostgreSQL |
+| Region | Frankfurt |
+| Authority | Server-owned claims, purchases, race sessions/rewards, task points and leaderboard |
+| Offline behaviour | Local preview/cache only; it cannot replace an existing cloud record |
+
+The current free Render PostgreSQL database expires on **20 December 2026**. It must be upgraded or migrated before that date to preserve production availability and player progression.
 
 [![Deploy HOOF backend to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Oputasamuel/Hoof)
 
@@ -100,7 +111,7 @@ See [backend/README.md](backend/README.md) for testing and deployment. A publish
 
 ## Project status
 
-This is a playable test scene, not a claimed finished product. The V0 plan focuses on structured multiplayer testing, the 5/10 onboarding test, mobile performance, authoritative persistence, abuse resistance, accessibility and final third-party licence evidence.
+This is a playable test scene, not a claimed finished product. Authoritative persistence is implemented and deployed; the V0 plan now focuses on cross-device validation, structured multiplayer testing, the 5/10 onboarding test, mobile performance, abuse monitoring, accessibility and final third-party licence evidence.
 
 ## Third-party assets
 

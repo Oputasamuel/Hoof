@@ -20,7 +20,7 @@ npm test
 npm start
 ```
 
-Without `DATABASE_URL`, data is stored in `backend/data/players.json`. The scene currently points to `http://127.0.0.1:8787`.
+Without `DATABASE_URL`, data is stored in `backend/data/players.json`. To use a local server, temporarily point `HOOF_BACKEND_URL` in `src/game/backend.ts` to `http://127.0.0.1:8787`; do not publish that configuration.
 
 ## Production database
 
@@ -36,10 +36,14 @@ Tables and indexes are created automatically at startup. JSON storage is intende
 
 ## Production deployment
 
+The current production service is `https://hoof-dcl-api.onrender.com` in Render's Frankfurt region. Its health endpoint reports PostgreSQL storage and authoritative mode. The scene source is already configured for this URL.
+
+The attached free Render PostgreSQL database expires on **20 December 2026**. Upgrade or migrate it before that date, verify the health endpoint, and preserve the database connection settings during the migration.
+
 1. Deploy this folder as a Node 20 service or use the included Dockerfile.
 2. Configure `DATABASE_URL` and HTTPS.
 3. Confirm `GET /health` returns `authoritative: true` and `storage: postgres`.
-4. Replace `HOOF_BACKEND_URL` in `src/game/backend.ts` with the HTTPS service URL.
+4. Set `HOOF_BACKEND_URL` in `src/game/backend.ts` to the HTTPS service URL.
 5. Rebuild and publish the scene.
 
 The service must remain behind HTTPS for published Decentraland clients. Keep one application instance for the first release; horizontal scaling should add database-level per-player transaction locking.

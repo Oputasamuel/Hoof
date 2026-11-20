@@ -7,7 +7,7 @@
 | **Public experience title** | **HOOF** — IP & [Content Policy](https://decentraland.org/content/) status: original game design and code owned by the creator; third-party horse models, music, sound effects, fonts, and source references require a final licence-evidence folder before submission. Name screening: concern found in a general web check on 18 November 2026 because “Hoof” and similar names are used by other horse games; final trademark/title clearance is `TBD:`. No gambling, wagering, paid horse purchase, or cash-out is designed. |
 | **Deployment target** | Decentraland World: **hoof.dcl.eth** |
 | **Studio / team name** | Zedef / HOOF — `TBD:` final studio name |
-| **Date** | 18 November 2026 |
+| **Date** | 20 November 2026 |
 | **Contact (Discord + email)** | Discord: `TBD:` / Email: zedef0808@gmail.com |
 
 ---
@@ -18,7 +18,7 @@
 |---|---|
 | **Player promise** | You are a royal stable racer. Master a horse across obstacle-filled circuits while nearby teammates turn close formation into shared racing power. |
 | **Primary player** | For players who enjoy accessible arcade racers and horse games, arriving alone or with friends, looking for a quick competitive race with persistent stable progression. |
-| **Current status** | Playable vertical slice in Creator Hub, configured for **hoof.dcl.eth**: three-lap racing, six-horse field, AI rivals, touch/desktop controls, obstacles, daily tasks, check-in rewards, unlockable horses, local progression, same-realm multiplayer prototype, royal stadium, UI, and sound. Cloud persistence and production leaderboard service are coded as an optional prototype but are not deployed. |
+| **Current status** | Playable vertical slice in Creator Hub, configured for **hoof.dcl.eth**: three-lap racing, six-horse field, AI rivals, touch/desktop controls, obstacles, daily tasks, check-in rewards, unlockable horses, same-realm multiplayer prototype, royal stadium, UI, and sound. The Signed Fetch/PostgreSQL persistence and permanent leaderboard service are deployed; the updated scene bundle still requires publication and cross-device production validation. |
 | **Requested round** | V0: validate and harden the social racing and progression slice. |
 | **Live at end of the round** | A player can enter HOOF alone or with others, complete a synchronized team or solo race, earn persistent stable rewards, pursue daily objectives, and return for named-rival ranking and horse unlocks. |
 
@@ -102,7 +102,7 @@ I want horse racing to feel immediate and social in Decentraland, rather than be
 
 At the end of your first week, you open HOOF already knowing the horse above your starter is within reach. You claim the calendar milestone and Moonlight joins your stable. In the paddock, another player sees the new horse and chooses to ready beside you. You now race for more than one finish: you are protecting a visible stable identity and closing a known points gap.
 
-**Economy line:** Horseshoes come from race finishes, daily claims, and completed tasks; they leave the economy when a horse is unlocked. Stable XP grants levels, while leaderboard points grant status rather than racing power. The main abuse risks are clock manipulation and edited local saves, so production competitive data must move to signed, Decentraland-identity-bound server storage before rewards or rankings are treated as authoritative.
+**Economy line:** Horseshoes come from race finishes, daily claims, and completed tasks; they leave the economy when a horse is unlocked. Stable XP grants levels, while leaderboard points grant status rather than racing power. Production competitive data is stored by the signed, Decentraland-identity-bound backend. Server time, one-use race sessions, server-calculated rewards and import-only migration reduce clock and local-save manipulation; telemetry review and stronger race plausibility checks remain validation work.
 
 ### 4.3 Two return hooks
 
@@ -120,7 +120,7 @@ At the end of your first week, you open HOOF already knowing the horse above you
 | **The repeatable social loop** | Player A readies in the paddock and holds a visible team line → Player B voluntarily readies and rides within formation → together they build Crown Bond through proximity and synchronized jumps → lower stamina drain and a shared team result give them a reason to regroup, refine formation, or challenge the opposite stable. |
 | **The disappearance test** | If all other players vanish, solo racing, AI, tasks, and progression remain enjoyable, but the ready ritual, formation choice, synchronized-jump bonus, Crown Bond stamina efficiency, named human rivalry, team score, and teammate recognition disappear. The most strategically efficient social route no longer exists. |
 | **From strangers to a group** | Within 30 seconds, the paddock lists racers under **Gold Stable** or **Purple Stable**, shows ready status, and gives one large **READY** action. Coloured name markers and the Crown Bond meter communicate “ride near this person” without voice or shared language. |
-| **Recognition & continuity** | The player first sees another name in the paddock and above that racer’s horse. Production persistence will retain cumulative leaderboard identity, recent named rivals, stable level, and equipped horse; a later session changes because the player can target the racer directly above them or reunite with a proven Crown Bond partner. |
+| **Recognition & continuity** | The player first sees another name in the paddock and above that racer’s horse. Production persistence retains cumulative leaderboard identity, stable level, owned and equipped horses, economy and daily progress by Decentraland identity; a later session changes because the player can target the racer directly above them or reunite with a proven Crown Bond partner. Recent named-rival history remains a future extension. |
 | **Quiet hours & player counts** | With nobody else online, a solo player enjoys racing because AI rivals make mistakes, contest lines, and sometimes miss hurdles while tasks reward varied goals. If no earlier-player data exists, the stable calendar and authored AI provide the first goals. Social play becomes viable at **2 players**; the ideal group is **4–6**; the target is **6 concurrent racers**. Tested count: `TBD:` structured multi-client test. A solo arrival sees a paddock wait state but can launch an AI-filled race immediately; scheduled community heats create reliable overlap. |
 | **Drop-in / drop-out** | A late arrival joins the paddock for the next short heat and can contribute immediately as a partner or rival. A disconnected player’s horse slot returns to AI/neutral behaviour after timeout; the remaining racers continue and team scoring uses available finishers. Blocking and collision separation reduce simple griefing. |
 | **Visible play (the bystander test)** | A bystander sees horses, coloured teams, positions, hurdles, a finish arch, and cheering spectators, and understands that players are racing and cooperating in formation. |
@@ -133,7 +133,7 @@ At the end of your first week, you open HOOF already knowing the horse above you
 - **Mechanical consequence:** at the active threshold, stamina drain is reduced for the linked racer. This helps sustained pace but does not remove steering or jumping skill.
 - **Team consequence:** Gold and Purple results compare summed finishing places when enough human racers are present.
 - **Solo protection:** every heat remains playable with AI, and social bonuses do not permanently increase horse statistics.
-- **Anti-collusion direction:** daily and cumulative points come from bounded task definitions, not player-transferred value. Repeated suspicious results can be rate-limited once the signed backend is live.
+- **Anti-collusion direction:** daily and cumulative points come from bounded task definitions, not player-transferred value. Signed identity, one-use race sessions, bounded rewards and server-side result validation are live; rate limiting, suspicious-result telemetry and moderation procedures remain hardening work.
 
 ---
 
@@ -219,7 +219,7 @@ HOOF is not designed for realistic horse-breeding simulation, passive wagering, 
 |---|---|
 | **1 — Prototype definition** | Freeze the V0 promise and four racing inputs; audit all third-party licences; move production configuration away from localhost; create desktop and mobile performance profiles; instrument the 5/10 onboarding test; reduce menu choices to the essential start, task, rank, stable, and help flows. **Exit:** a new player can enter one solo heat without assistance and all content has a rights-status record. |
 | **2 — Core interaction + first-group test** | Run structured two-, four-, and six-client tests of paddock readiness, remote horse interpolation, player timeout, Crown Bond, synchronized jumps, team scoring, and back-to-back heats. Tune proximity and stamina benefit so cooperation is useful but not compulsory. Test 10 new players for the 5/10 rule. **Exit:** two strangers voluntarily form once, understand why it helped, and can race again after disconnect/drop-in events. |
-| **3 — Core systems refinement** | Deploy the signed identity backend or disable competitive cloud claims; persist economy, daily board, cumulative points, equipped horse, stable level, and named leaderboard entries by Decentraland ID. Add validation, rate limits, UTC rules, conflict handling, and local/offline fallback. Profile and optimize crowd, stadium, horses, audio, UI, and message rates on the named mobile device. **Exit:** cross-device save and ranking survive reload, or the release is clearly labelled local-only and the global board is hidden. |
+| **3 — Core systems refinement** | Validate the deployed signed-identity backend across accounts and devices; persist economy, daily board, cumulative points, equipped horse, stable level, and named leaderboard entries by Decentraland ID. Harden validation, rate limits, UTC rules, conflict handling and local/offline fallback. Profile and optimize crowd, stadium, horses, audio, UI, and message rates on the named mobile device. **Exit:** cross-device save and ranking survive reload, disconnect and reconnect tests, or the global board is temporarily hidden. |
 | **4 — Playable release, testing and deployment** | Complete accessibility/safe-area passes, bug fixing, six-player soak tests, audio balancing, thumbnail/metadata, privacy and Content Policy review, World deployment to **hoof.dcl.eth**, and a scheduled launch heat. Record onboarding, voluntary rematch, social action, crash, frame-rate, and return observations. **Exit:** stable public vertical slice with a documented fallback for backend or low concurrency. |
 
 **What keeps the experience changing after launch**
@@ -250,13 +250,14 @@ The top risk is that the dense royal stadium and large cheering crowd fail to ho
 - [ ] 5/10 onboarding test: participant count, device, first useful action, goal statement, and assistance required.
 - [ ] Two-, four-, and six-client multiplayer test recordings or logs.
 - [ ] Mobile frame-rate captures at grid, crowd turn, hurdle group, and finish.
-- [ ] Cross-device persistence and leaderboard validation, or clear local-only release label.
+- [ ] Cross-device persistence and leaderboard validation against the production service.
 - [ ] Licence evidence for every third-party model, audio file, font, texture, and borrowed code reference.
 - [ ] Title/name clearance decision for **HOOF**.
 - [ ] Thumbnail, description, spawn view, and first minute all communicate the same royal social horse-racing promise.
 - [ ] Content Policy check and age rating confirmation.
-- [ ] Production backend URL, privacy statement, abuse controls, and recovery plan if cloud ranking is enabled.
+- [x] Production backend URL and Signed Fetch identity integration.
+- [ ] Privacy statement, abuse controls, database backup/migration and recovery plan.
 
 ## Current implementation boundary
 
-This GDD describes the intended V0/v1 experience and identifies what is already playable. The current project contains the race controller, AI field, three laps, gradual sprint, stamina, jumps, hurdle collisions, wrong-way/off-track handling, touch and desktop HUD, sound, daily task bank, cumulative points, 28-day rewards, horse collection, local persistence, royal environment, spectator population, and same-realm multiplayer/Crown Bond prototype. Production cloud saving, authoritative leaderboard operation, named-rival continuity, validated concurrent-player behaviour, mobile performance certification, and final asset-rights evidence remain release work and must not be represented as complete until tested.
+This GDD describes the intended V0/v1 experience and identifies what is already playable. The current project contains the race controller, AI field, three laps, gradual sprint, stamina, jumps, hurdle collisions, wrong-way/off-track handling, touch and desktop HUD, sound, daily task bank, cumulative points, 28-day rewards, horse collection, royal environment, spectator population, and same-realm multiplayer/Crown Bond prototype. The production service at `https://hoof-dcl-api.onrender.com` uses Decentraland Signed Fetch and PostgreSQL for identity-bound state, daily claims, purchases, one-use race sessions, server-calculated rewards and the permanent leaderboard. Local state is an offline preview/cache and a first-record import source, not authority over an existing server record. The updated scene must be republished to **hoof.dcl.eth** and cross-device persistence, named-rival continuity, concurrent-player behaviour, mobile performance, abuse monitoring and final asset-rights evidence still require validation. The current free PostgreSQL instance expires on **20 December 2026** and must be upgraded or migrated before that date.
