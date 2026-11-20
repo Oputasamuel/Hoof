@@ -84,6 +84,8 @@ The scene includes a PostgreSQL-ready service in [`backend/`](backend/) using De
 
 See [backend/README.md](backend/README.md) for testing and deployment. A published build requires an HTTPS deployment, PostgreSQL and an update to `HOOF_BACKEND_URL` in `src/game/backend.ts`.
 
+[![Deploy HOOF backend to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Oputasamuel/Hoof)
+
 ## Repository structure
 
 | Path | Purpose |
