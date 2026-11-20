@@ -4,7 +4,7 @@
   "private": true,
   "description": "Wallet-linked persistence service for HOOF",
   "main": "server.js",
-  "scripts": { "start": "node server.js", "check": "node --check server.js" },
+  "scripts": { "start": "node server.js", "check": "node --check server.js && node --check rules.js && node --check storage.js", "test": "node test.js" },
   "engines": { "node": ">=18" },
-  "dependencies": { "decentraland-crypto-middleware": "1.3.0", "express": "4.22.3" }
+  "dependencies": { "decentraland-crypto-middleware": "1.3.0", "express": "4.22.3", "pg": "8.16.3" }
 }

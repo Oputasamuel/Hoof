@@ -127,6 +127,7 @@ export function initializeEconomy() {
 export function getProfile() { return profile }
 export function getStableLevel() { return 1 + Math.floor(profile.stableXp / 250) }
 export function getLastRewardMessage() { return lastRewardMessage }
+export function setLastRewardMessage(message: string) { lastRewardMessage = message.slice(0, 180) }
 export function isHorseOwned(id: string) { return profile.ownedHorses.includes(id) }
 export function isHorseEquipped(id: string) { return profile.equippedHorse === id }
 export function getEquippedHorse() { return HORSE_CATALOG.find(h => h.id === profile.equippedHorse) ?? HORSE_CATALOG[0] }

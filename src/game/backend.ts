@@ -1,114 +1,165 @@
 import { engine, executeTask } from '@dcl/sdk/ecs'
 import { signedFetch } from '~system/SignedFetch'
 import { getPlayer } from '@dcl/sdk/players'
-import { exportEconomyState, hydrateEconomyState } from './economy'
+import {
+  claimDailyReward as claimDailyRewardLocal,
+  equipHorse as equipHorseLocal,
+  exportEconomyState,
+  hydrateEconomyState,
+  purchaseHorse as purchaseHorseLocal,
+  setLastRewardMessage
+} from './economy'
 import { exportDailyState, hydrateDailyState } from './dailyTasks'
+import { gameEvents, RaceResult } from './events'
+import { gameState } from './state'
 
-// Local preview endpoint. Change this to the deployed HTTPS backend before publishing.
+// Local preview endpoint. Replace with the deployed HTTPS API URL before publishing.
 export const HOOF_BACKEND_URL = 'http://127.0.0.1:8787'
 
 type CloudState = {
   economy: ReturnType<typeof exportEconomyState>
   daily: ReturnType<typeof exportDailyState>
 }
-
+type StateResponse = { state?: CloudState | null; message?: string }
 export type LeaderboardEntry = { rank: number; address: string; name: string; points: number }
 
 let status: 'CONNECTING' | 'CLOUD' | 'LOCAL' = 'CONNECTING'
 let initialized = false
 let hydrated = false
-let requestActive = false
-let saveTimer = 0
+let loadActive = false
+let retryTimer = 0
 let leaderboardTimer = 0
-let lastSaved = ''
 let leaderboard: LeaderboardEntry[] = []
+let activeRacePromise: Promise<string | undefined> | undefined
+let raceJumps = 0
+let raceClean = true
 
-function snapshot(): CloudState {
-  return { economy: exportEconomyState(), daily: exportDailyState() }
+function snapshot(): CloudState { return { economy: exportEconomyState(), daily: exportDailyState() } }
+function playerName() { return getPlayer()?.name || 'RACER' }
+function applyCloudState(value?: CloudState | null) {
+  if (!value) return
+  hydrateEconomyState(value.economy)
+  hydrateDailyState(value.daily)
 }
 
 async function signedRequest(path: string, method = 'GET', body?: unknown) {
   const response = await signedFetch({
     url: `${HOOF_BACKEND_URL}${path}`,
-    init: {
-      method,
-      headers: { 'Content-Type': 'application/json' },
-      body: body === undefined ? undefined : JSON.stringify(body)
-    }
+    init: { method, headers: { 'Content-Type': 'application/json' }, body: body === undefined ? undefined : JSON.stringify(body) }
   })
-  if (!response.ok) throw new Error(`HOOF backend returned ${response.status}`)
-  return response.body ? JSON.parse(response.body) : {}
+  const result = response.body ? JSON.parse(response.body) : {}
+  if (!response.ok) throw new Error(result.message || `HOOF backend returned ${response.status}`)
+  return result
 }
 
 async function loadCloudState() {
-  if (requestActive) return
-  requestActive = true
+  if (loadActive) return
+  loadActive = true
   try {
-    const result = await signedRequest('/v1/state') as { state?: CloudState | null }
-    if (result.state) {
-      hydrateEconomyState(result.state.economy)
-      hydrateDailyState(result.state.daily)
-    } else {
-      await signedRequest('/v1/state', 'PUT', { state: snapshot(), name: getPlayer()?.name || 'RACER' })
-    }
-    lastSaved = JSON.stringify(snapshot())
+    let result = await signedRequest('/v1/state') as StateResponse
+    if (!result.state) result = await signedRequest('/v1/state', 'PUT', { state: snapshot(), name: playerName() }) as StateResponse
+    applyCloudState(result.state)
     hydrated = true
     status = 'CLOUD'
+    retryTimer = 30
   } catch (error) {
-    console.log('[HOOF] Cloud save unavailable; using local cache', error)
+    console.log('[HOOF] Cloud persistence unavailable; local cache remains active', error)
     hydrated = true
     status = 'LOCAL'
-  } finally {
-    requestActive = false
-  }
-}
-
-async function saveCloudState() {
-  if (requestActive || !hydrated) return
-  const state = snapshot()
-  const serialized = JSON.stringify(state)
-  if (serialized === lastSaved) return
-  requestActive = true
-  try {
-    await signedRequest('/v1/state', 'PUT', { state, name: getPlayer()?.name || 'RACER' })
-    lastSaved = serialized
-    status = 'CLOUD'
-  } catch (error) {
-    status = 'LOCAL'
-    console.log('[HOOF] Cloud save delayed; local cache retained', error)
-  } finally {
-    requestActive = false
-  }
+    retryTimer = 12
+  } finally { loadActive = false }
 }
 
 async function refreshLeaderboard() {
-  if (requestActive) return
-  requestActive = true
   try {
     const result = await signedRequest('/v1/leaderboard') as { entries?: LeaderboardEntry[] }
-    leaderboard = Array.isArray(result.entries) ? result.entries.slice(0, 10) : []
-  } catch {} finally { requestActive = false }
+    leaderboard = Array.isArray(result.entries) ? result.entries.slice(0, 100) : []
+  } catch {}
+}
+
+async function startAuthoritativeRace(seed: number) {
+  if (status !== 'CLOUD') return undefined
+  try {
+    const result = await signedRequest('/v1/races/start', 'POST', { seed, difficulty: gameState.difficulty, name: playerName() }) as { raceId?: string }
+    return result.raceId
+  } catch (error) {
+    console.log('[HOOF] Race validation session unavailable; race remains local', error)
+    return undefined
+  }
+}
+
+async function finishAuthoritativeRace(results: RaceResult[]) {
+  const raceId = await activeRacePromise
+  activeRacePromise = undefined
+  const player = results.find(result => result.horseId === 0)
+  if (!raceId || !player?.time) return
+  try {
+    const response = await signedRequest(`/v1/races/${raceId}/finish`, 'POST', {
+      name: playerName(), place: player.place, time: player.time, laps: player.laps,
+      jumps: raceJumps, clean: raceClean
+    }) as StateResponse
+    applyCloudState(response.state)
+    status = 'CLOUD'
+    await refreshLeaderboard()
+  } catch (error) {
+    console.log('[HOOF] Race reward validation failed; local result retained', error)
+  }
+}
+
+export async function claimDailyRewardCloud() {
+  if (status === 'CLOUD') {
+    try {
+      const response = await signedRequest('/v1/daily/claim', 'POST', { name: playerName() }) as StateResponse
+      applyCloudState(response.state)
+      if (response.message) setLastRewardMessage(response.message)
+      return
+    } catch (error) { console.log('[HOOF] Cloud daily claim failed; using local reward', error) }
+  }
+  claimDailyRewardLocal()
+}
+
+export async function purchaseHorseCloud(id: string) {
+  if (status === 'CLOUD') {
+    try {
+      const response = await signedRequest(`/v1/horses/${id}/purchase`, 'POST', { name: playerName() }) as StateResponse
+      applyCloudState(response.state)
+      if (response.message) setLastRewardMessage(response.message)
+      return true
+    } catch (error) { console.log('[HOOF] Cloud horse purchase rejected', error); return false }
+  }
+  return purchaseHorseLocal(id)
+}
+
+export async function equipHorseCloud(id: string) {
+  if (status === 'CLOUD') {
+    try {
+      const response = await signedRequest(`/v1/horses/${id}/equip`, 'POST', { name: playerName() }) as StateResponse
+      applyCloudState(response.state)
+      if (response.message) setLastRewardMessage(response.message)
+      return true
+    } catch (error) { console.log('[HOOF] Cloud horse equip rejected', error); return false }
+  }
+  return equipHorseLocal(id)
 }
 
 export function initializeBackendPersistence() {
   if (initialized) return
   initialized = true
+  gameEvents.on('raceStarted', ({ seed }) => { raceJumps = 0; raceClean = true; activeRacePromise = startAuthoritativeRace(seed) })
+  gameEvents.on('obstacleCleared', ({ horseId }) => { if (horseId === 0) raceJumps++ })
+  gameEvents.on('offTrackEntered', ({ horseId }) => { if (horseId === 0) raceClean = false })
+  gameEvents.on('wrongWayStarted', ({ horseId }) => { if (horseId === 0) raceClean = false })
+  gameEvents.on('raceFinished', ({ results }) => executeTask(() => finishAuthoritativeRace(results)))
   executeTask(loadCloudState)
   engine.addSystem(updateBackendPersistence)
 }
 
 export function updateBackendPersistence(dt: number) {
-  if (!initialized) return
-  saveTimer -= dt
+  if (!initialized || !hydrated) return
+  retryTimer -= dt
   leaderboardTimer -= dt
-  if (saveTimer <= 0) {
-    saveTimer = status === 'LOCAL' ? 12 : 3
-    executeTask(saveCloudState)
-  }
-  if (leaderboardTimer <= 0) {
-    leaderboardTimer = 30
-    executeTask(refreshLeaderboard)
-  }
+  if (status === 'LOCAL' && retryTimer <= 0) { retryTimer = 12; executeTask(loadCloudState) }
+  if (leaderboardTimer <= 0) { leaderboardTimer = 30; executeTask(refreshLeaderboard) }
 }
 
 export function getBackendStatus() { return status }

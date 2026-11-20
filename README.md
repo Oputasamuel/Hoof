@@ -78,11 +78,11 @@ Type-check the project with:
 npx tsc --noEmit
 ```
 
-## Optional persistence backend
+## Authoritative persistence backend
 
-The scene includes a small reference backend in [`backend/`](backend/) for Decentraland Signed Fetch identity, cross-device state and a global leaderboard. It is not required to preview the game and is not currently deployed for the public test build. Without it, the scene keeps progression in local storage and the competitive leaderboard is not authoritative across devices.
+The scene includes a PostgreSQL-ready service in [`backend/`](backend/) using Decentraland Signed Fetch identity. It owns daily claims, horse purchases, race rewards, task points, cross-device progression and the permanent global leaderboard. Local storage remains an offline preview fallback, but it cannot overwrite an existing server record.
 
-See [backend/README.md](backend/README.md) for local testing and production requirements. A production deployment must use HTTPS and `src/game/backend.ts` must be updated from its localhost URL before cloud features are enabled.
+See [backend/README.md](backend/README.md) for testing and deployment. A published build requires an HTTPS deployment, PostgreSQL and an update to `HOOF_BACKEND_URL` in `src/game/backend.ts`.
 
 ## Repository structure
 
@@ -91,7 +91,7 @@ See [backend/README.md](backend/README.md) for local testing and production requ
 | `src/` | SDK7 gameplay, UI, multiplayer, progression and audio code |
 | `assets/` | Models, textures, UI sprites, audio and thumbnail assets |
 | `design/gdd.md` | Creator Success Game Design Document |
-| `backend/` | Optional Signed Fetch persistence and leaderboard service |
+| `backend/` | Authoritative Signed Fetch progression and leaderboard service |
 | `main.crdt` | Creator Hub scene composition |
 | `scene.json` | Scene and World metadata |
 | `THIRD_PARTY_ASSETS.md` | Third-party asset source and licence notes |

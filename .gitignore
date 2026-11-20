@@ -23,6 +23,7 @@ yarn-error.log*
 backend/data/
 .env
 .env.*
+!backend/.env.example
 
 # OS files
 .DS_Store
