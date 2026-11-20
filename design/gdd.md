@@ -246,17 +246,18 @@ The top risk is that the dense royal stadium and large cheering crowd fail to ho
 
 ## Submission evidence checklist
 
-- [ ] Public build link for **hoof.dcl.eth** and exact tested client version.
-- [ ] 5/10 onboarding test: participant count, device, first useful action, goal statement, and assistance required.
-- [ ] Two-, four-, and six-client multiplayer test recordings or logs.
-- [ ] Mobile frame-rate captures at grid, crowd turn, hurdle group, and finish.
+- [x] Public build link for **hoof.dcl.eth** and exact tested client version.
+- [x] 5/10 onboarding test: participant count, device, first useful action, goal statement, and assistance required.
+- [x] Two-, four-, and six-client multiplayer test recordings or logs.
+- [x] Mobile frame-rate captures at grid, crowd turn, hurdle group, and finish.
 - [ ] Cross-device persistence and leaderboard validation against the production service.
-- [ ] Licence evidence for every third-party model, audio file, font, texture, and borrowed code reference.
-- [ ] Title/name clearance decision for **HOOF**.
-- [ ] Thumbnail, description, spawn view, and first minute all communicate the same royal social horse-racing promise.
-- [ ] Content Policy check and age rating confirmation.
+- [x] Licence evidence for every third-party model, audio file, font, texture, and borrowed code reference.
+- [x] Title/name clearance decision for **HOOF**.
+- [x] Thumbnail, description, spawn view, and first minute all communicate the same royal social horse-racing promise.
+- [x] Content Policy check and age rating confirmation.
 - [x] Production backend URL and Signed Fetch identity integration.
-- [ ] Privacy statement, abuse controls, database backup/migration and recovery plan.
+- [x] Privacy statement, abuse controls, database backup/migration and recovery plan.
+- [ ] New levels and environments.
 
 ## Current implementation boundary
 
