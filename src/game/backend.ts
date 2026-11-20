@@ -13,8 +13,7 @@ import { exportDailyState, hydrateDailyState } from './dailyTasks'
 import { gameEvents, RaceResult } from './events'
 import { gameState } from './state'
 
-// Local preview endpoint. Replace with the deployed HTTPS API URL before publishing.
-export const HOOF_BACKEND_URL = 'http://127.0.0.1:8787'
+export const HOOF_BACKEND_URL = 'https://hoof-dcl-api.onrender.com'
 
 type CloudState = {
   economy: ReturnType<typeof exportEconomyState>
