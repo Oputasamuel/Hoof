@@ -19,7 +19,7 @@
 | **Player promise** | You are a royal stable racer. Master a horse across obstacle-filled circuits while nearby teammates turn close formation into shared racing power. |
 | **Primary player** | For players who enjoy accessible arcade racers and horse games, arriving alone or with friends, looking for a quick competitive race with persistent stable progression. |
 | **Current status** | Playable vertical slice in Creator Hub, configured for **hoof.dcl.eth**: three-lap racing, six-horse field, AI rivals, touch/desktop controls, obstacles, daily tasks, check-in rewards, unlockable horses, same-realm multiplayer prototype, royal stadium, UI, and sound. The Signed Fetch/PostgreSQL persistence and permanent leaderboard service are deployed; the updated scene bundle still requires publication and cross-device production validation. |
-| **Requested round** | V0: validate and harden the social racing and progression slice. |
+| **Requested round** | V0: validate and harden the social racing and progression slice and future Stages and Rounds which involves different environments . |
 | **Live at end of the round** | A player can enter HOOF alone or with others, complete a synchronized team or solo race, earn persistent stable rewards, pursue daily objectives, and return for named-rival ranking and horse unlocks. |
 
 ---
